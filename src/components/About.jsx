@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/About.css';
-import video1 from '../assets/crop2.mp4';
-import video2 from '../assets/vid2org.mp4';
+import video1 from '../assets/video/crop2.mp4';
+import video2 from '../assets/video/vid2org.mp4';
 
 const About = () => {
   useEffect(() => {

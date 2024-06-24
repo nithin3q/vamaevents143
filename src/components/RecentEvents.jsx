@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import '../styles/RecentEvents.css';
-import video1 from '../assets/images/recent1.mp4';
-import video2 from '../assets/images/recent2.mp4';
-import video3 from '../assets/images/recent3.mp4';
-import video4 from '../assets/images/recent4.mp4';
-import video5 from '../assets/images/recent5.mp4';
-import video6 from '../assets/images/recent6.mp4';
-import video7 from '../assets/images/recent7.mp4';
-import video8 from '../assets/images/recent8.mp4';
-import video9 from '../assets/images/recent9.mp4';
-import video10 from '../assets/images/recent10.mp4';
-import video11 from '../assets/images/recent11.mp4';
-import video12 from '../assets/images/recent122.mp4';
-import video13 from '../assets/images/recent13.mp4';
-import video14 from '../assets/images/recent144.mp4';
+// import video1 from '../assets/video/recent1.mp4';
+import video2 from '../assets/video/recent2.mp4';
+import video3 from '../assets/video/recent3.mp4';
+// import video4 from '../assets/video/recent4.mp4';
+import video5 from '../assets/video/recent5.mp4';
+import video6 from '../assets/video/recent6.mp4';
+import video7 from '../assets/video/recent7.mp4';
+import video8 from '../assets/video/recent8.mp4';
+import video9 from '../assets/video/recent9.mp4';
+import video10 from '../assets/video/recent10.mp4';
+import video11 from '../assets/video/recent11.mp4';
+import video12 from '../assets/video/recent122.mp4';
+import video13 from '../assets/video/recent13.mp4';
+import video14 from '../assets/video/recent144.mp4';
 import LoadingAnimation from './LoadingAnimation';
 
 const RecentEvents = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../styles/Footer.css";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import logo from "../assets/images/logo555.png";
+import logo from "../assets/images/logo66.png";
 import { NavHashLink } from "react-router-hash-link";
 
 const Footer = () => {
