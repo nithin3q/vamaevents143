@@ -1,0 +1,74 @@
+.socials-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1 !important;
+}
+
+.icon {
+    position: relative;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.fb-icon {
+    background-color: #2570fb; /* Facebook blue */
+    color: #FFFFFF;
+}
+
+.fb-icon:hover {
+    transform: scale(1.1) translateX(-10px);
+    background-color: #3b5998;
+}
+
+.whatsapp-icon {
+    background-color: #25D366; /* WhatsApp green */
+    color: #FFFFFF;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon:hover .whatsapp-number {
+    opacity: 1;
+    transform: translateX(100%);
+    transform: translateY(-50%) translateX(5%);
+}
+
+.whatsapp-number {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%) translateX(100%);
+    background-color: #25D366;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    height: 40px; /* Adjust as needed for proper alignment */
+    line-height: 40px; /* Adjust as needed for proper alignment */
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .socials-container {
+        right: 10px;
+    }
+
+    .whatsapp-icon {
+        margin-bottom: 10px;
+    }
+}
+

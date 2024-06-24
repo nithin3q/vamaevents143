@@ -1,0 +1,18 @@
+.footer {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-top: 1px solid rgb(214, 214, 214) !important;
+}
+.footer-w{
+    background-color: #000000 !important;
+}
+
+footer a {
+  color: #91c4fb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #0080ff;
+}

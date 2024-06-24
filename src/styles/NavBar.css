@@ -1,0 +1,40 @@
+
+:root {
+    --pink: #fc5c65;
+}
+
+.navbar {
+    padding-top: 0.5rem; /* Reduce padding to decrease height */
+    padding-bottom: 0.5rem;
+    
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    color: #4388c4 !important;
+
+}
+.nav-link .nav-icons  {
+    margin-right: 0.1rem; 
+    color: #b365ef !important;
+}
+.nav-link:hover{
+    color: #27745d !important;
+    background-color: rgb(15, 14, 14,0.1);
+    border-radius: 10px;
+
+
+}
+
+.navbar-nav > li > a {
+    display: block;
+    color: gray;
+    text-decoration: none;
+    transition: .4s;
+    padding: 0.5rem 1rem;
+}
+
+.navbar {
+    z-index: 99;
+}

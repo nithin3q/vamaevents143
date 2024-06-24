@@ -1,0 +1,99 @@
+/* General Styles */
+.about-us-container {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+  
+  
+  
+  /* About Us Content */
+  .about-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .about-us-description {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .about-us-description h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .about-us-description p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-image {
+    flex: 1;
+    max-width: 660px;
+  }
+  
+  .about-us-image img {
+    width: 600px;
+    border-radius: 10px;
+    height: 400px;
+  }
+
+  .visitingcard {
+    --s: 10px; /* control the size */
+    padding: var(--s);
+    border: calc(2*var(--s)) solid #0000;
+    outline: 1px solid #000;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px,#0000 25%,#000 0);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .about-us-content {
+      gap: 20px;
+    }
+  
+    .about-us-description h2 {
+      font-size: 2em;
+    }
+  
+    .about-us-description p {
+      font-size: 1.1em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-us-content {
+      flex-direction: column;
+    }
+  
+    .about-us-description h2 {
+      font-size: 1.8em;
+    }
+  
+    .about-us-description p {
+      font-size: 1em;
+    }
+  
+    .about-us-image img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-us-description h2 {
+      font-size: 1.5em;
+    }
+  
+    .about-us-description p {
+      font-size: 0.9em;
+    }
+  }
+  
