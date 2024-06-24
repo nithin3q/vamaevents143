@@ -3,7 +3,7 @@
   "homepage": "http://103.154.184.168/",
   "private": true,
   "engines": {
-        "node": ">=18.0.0"
+        "node": ">=21.7.3"
   },
   "version": "0.0.0",
   "type": "module",
