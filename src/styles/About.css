@@ -140,7 +140,7 @@
     .videoPlayer {
       width: 100%;
       height: auto;
-      max-height: 300px;
+      max-height: 400px;
     }
   
     .about-container.reverse .about-video {

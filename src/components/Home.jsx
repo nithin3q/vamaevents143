@@ -26,7 +26,7 @@ const Home = () => {
                 <img src={img1} className="d-block w-100 nithin2" alt="Fireworks" />
                 <div className="carousel-caption mb-lg-4">
                   <h1>Perfect Spot for your next event</h1>
-                  <p className="d-none d-sm-block">We have an awesome venue. Which is decorated <br /> with colorful lights and
+                  <p className="d-none d-sm-block hello">We have an awesome venue. Which is decorated <br /> with colorful lights and
                     many beautiful Craftsmanship.</p>
                     <NavHashLink smooth to="#contact" 
                     className="white-btn py-1 px-2 px-lg-4 py-lg-2">Book Now</NavHashLink>
