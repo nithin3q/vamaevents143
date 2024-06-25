@@ -23,7 +23,7 @@ const Home = () => {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item ">
-                <img src={img1} className="d-block w-100 nithin2" alt="Fireworks" />
+                <img src="https://res.cloudinary.com/drjmfligo/image/upload/v1719338380/fireworks_a3ivuf.jpg" className="d-block w-100 nithin2" alt="Fireworks" />
                 <div className="carousel-caption mb-lg-4">
                   <h1>Perfect Spot for your next event</h1>
                   <p className="d-none d-sm-block hello">We have an awesome venue. Which is decorated <br /> with colorful lights and
@@ -33,7 +33,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="carousel-item active">
-                <img src={img2} className="d-block w-100 nithin2" alt="Smoke Bomb" />
+                <img src="http://res.cloudinary.com/drjmfligo/image/upload/v1719338391/smokebomb_vyvhvq.jpg" className="d-block w-100 nithin2" alt="Smoke Bomb" />
                 <div className="carousel-caption mb-lg-4">
                   <h1>Perfect Spot for your Wedding</h1>
                   <p className="d-none d-sm-block">We have an awesome venue. Which is decorated <br /> with colorful lights and
@@ -43,7 +43,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={img3} className="d-block w-100 nithin2" alt="Confetti" />
+                <img src="https://res.cloudinary.com/drjmfligo/image/upload/v1719338369/confetti_tvikwn.jpg" className="d-block w-100 nithin2" alt="Confetti" />
                 <div className="carousel-caption mb-lg-4">
                   <h1>Perfect Spot for get together</h1>
                   <p className="d-none d-sm-block">We have an awesome venue. Which is decorated <br /> with colorful lights and
