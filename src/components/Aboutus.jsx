@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/AboutUs.css'; 
-import servicesImg from '../assets/images/visitingcard11.jpg';
+// import servicesImg from '../assets/images/visitingcard11.jpg';
 
 const AboutUs = () => {
   return (
@@ -22,7 +22,7 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="about-us-image visitingcard">
-          <img src={servicesImg} alt="Our Services" />
+          <img src="https://res.cloudinary.com/drjmfligo/image/upload/v1719341122/visitingcard11_j3gfll.jpg" alt="Our Services" />
         </div>
       </div>
     </div>

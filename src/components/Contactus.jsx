@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import '../styles/Contactus.css';
-import contactus from '../assets/images/contact.jpg';
+// import contactus from '../assets/images/contact.jpg';
 import emailjs from "@emailjs/browser";
 
 const Contactus = () => {
@@ -60,7 +60,7 @@ const Contactus = () => {
         </h1>
         <div className="contact row row-cols-1 row-cols-lg-2 g-lg-4 d-flex align-items-center">
           <div className="col contact-image">
-            <img className="img-fluid" src={contactus} alt="Contact" />
+            <img className="img-fluid" src="https://res.cloudinary.com/drjmfligo/image/upload/v1719339220/contact_plwjcw.jpg" alt="Contact" />
           </div>
           <div className="col form">
             <form

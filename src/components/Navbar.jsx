@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/NavBar.css';
-import logo from '../assets/images/logo7.png';
+// import logo from '../assets/images/logo7.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faEnvelope, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { NavHashLink } from "react-router-hash-link";
@@ -12,7 +12,7 @@ function NavBar() {
         <div className="container-fluid container-lg">
           <div className="logo">
             <a className="navbar-brand fw-bold fs-3" href="#">
-              <img className="img-fluid" width="220" height="20" src={logo} alt="cine special effects" />
+              <img className="img-fluid" width="220" height="20" src="http://res.cloudinary.com/drjmfligo/image/upload/v1719341290/logo7_brk05f.jpg" alt="cine special effects" />
             </a>
           </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

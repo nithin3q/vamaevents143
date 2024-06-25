@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/Home.css'; // Assuming you have a CSS file for styling
-import img1 from '../assets/images/fireworks.jpg';
-import img2 from '../assets/images/smokebomb.jpg';
-import img3 from '../assets/images/confetti.jpg';
+// import img1 from '../assets/images/fireworks.jpg';
+// import img2 from '../assets/images/smokebomb.jpg';
+// import img3 from '../assets/images/confetti.jpg';
 import { NavHashLink } from "react-router-hash-link";
 
 
@@ -33,7 +33,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="carousel-item active">
-                <img src="http://res.cloudinary.com/drjmfligo/image/upload/v1719338391/smokebomb_vyvhvq.jpg" className="d-block w-100 nithin2" alt="Smoke Bomb" />
+                <img src="https://res.cloudinary.com/drjmfligo/image/upload/v1719338391/smokebomb_vyvhvq.jpg" className="d-block w-100 nithin2" alt="Smoke Bomb" />
                 <div className="carousel-caption mb-lg-4">
                   <h1>Perfect Spot for your Wedding</h1>
                   <p className="d-none d-sm-block">We have an awesome venue. Which is decorated <br /> with colorful lights and
