@@ -24,10 +24,10 @@ function App() {
     <>
      <Router>
       <div className="App" >
-        {/* <NavBar />
+        <NavBar />
         <Home/>
         <Services/>
-        <About/> */}
+        <About/>
         <RecentEvents/>
         <Equipment/>
         <AboutUs/>
