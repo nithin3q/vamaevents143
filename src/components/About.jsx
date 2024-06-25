@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import '../styles/About.css';
-import video1 from '../assets/video/crop2.mp4';
-import video2 from '../assets/video/vid2org.mp4';
 
 const About = () => {
   useEffect(() => {
@@ -41,7 +39,7 @@ const About = () => {
 
       <div className="about-container">
         <div className="about-video">
-          <video className="videoPlayer" src={video1} autoPlay loop muted></video>
+          <video className="videoPlayer" src="http://res.cloudinary.com/drjmfligo/video/upload/v1719312787/crop2_pxjahe.mp4" autoPlay loop muted></video>
         </div>
         <div className="about-description">
           <h2>Wedding Entry Extravaganza</h2>
@@ -55,11 +53,11 @@ const About = () => {
         <div className="about-description">
           <h2>On-Stage Wedding Spectacle</h2>
           <p>
-          Experience the breathtaking spectacle of an on-stage wedding celebration enhanced by the vibrant display of background color bomb fireworks and enchanting cold fire effects. As the couple stands center stage, the dynamic bursts of color and the mesmerizing cold fires create a stunning visual backdrop, adding a dramatic and magical touch to the event.This awe-inspiring combination of effects ensures a memorable and visually captivating experience for all attendees, making the special day even more extraordinary.
+            Experience the breathtaking spectacle of an on-stage wedding celebration enhanced by the vibrant display of background color bomb fireworks and enchanting cold fire effects. As the couple stands center stage, the dynamic bursts of color and the mesmerizing cold fires create a stunning visual backdrop, adding a dramatic and magical touch to the event.This awe-inspiring combination of effects ensures a memorable and visually captivating experience for all attendees, making the special day even more extraordinary.
           </p>
         </div>
         <div className="about-video">
-          <video className="videoPlayer" src={video2} autoPlay loop muted></video>
+          <video className="videoPlayer" src="http://res.cloudinary.com/drjmfligo/video/upload/v1719312883/vid2org_ph1bdg.mp4" autoPlay loop muted></video>
         </div>
       </div>
     </div>

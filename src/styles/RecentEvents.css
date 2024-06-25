@@ -129,3 +129,15 @@ span.badge.badge-light {
     filter: drop-shadow(2px 1px 1px #000);
     transform: scale(1.25);
 }
+
+
+.btn-primarys {
+    background-color: #ff49fc;
+    border-color: #88f6f6;
+    color: rgb(18, 18, 18);
+}
+
+.btn-primarys:hover {
+    background-color: #c25bc5;
+    border-color: #0bf0f0;
+}
