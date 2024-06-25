@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/About.css';
+import video1 from '../assets/video/crop2.mp4';
+import video2 from '../assets/video/vid2org.mp4';
 
 const About = () => {
   useEffect(() => {
@@ -39,7 +41,7 @@ const About = () => {
 
       <div className="about-container">
         <div className="about-video">
-          <video className="videoPlayer" src="http://res.cloudinary.com/drjmfligo/video/upload/v1719312787/crop2_pxjahe.mp4" autoPlay loop muted></video>
+          <video className="videoPlayer" src={video1} autoPlay loop muted></video>
         </div>
         <div className="about-description">
           <h2>Wedding Entry Extravaganza</h2>
@@ -57,7 +59,7 @@ const About = () => {
           </p>
         </div>
         <div className="about-video">
-          <video className="videoPlayer" src="http://res.cloudinary.com/drjmfligo/video/upload/v1719312883/vid2org_ph1bdg.mp4" autoPlay loop muted></video>
+          <video className="videoPlayer" src={video2} autoPlay loop muted></video>
         </div>
       </div>
     </div>

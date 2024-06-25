@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import '../styles/RecentEvents.css';
-// import video2 from '../assets/video/recent2.mp4';
-// import video3 from '../assets/video/recent3.mp4';
-// import video5 from '../assets/video/recent5.mp4';
-// import video6 from '../assets/video/recent6.mp4';
-// import video7 from '../assets/video/recent7.mp4';
-// import video8 from '../assets/video/recent8.mp4';
-// import video9 from '../assets/video/recent9.mp4';
-// import video10 from '../assets/video/recent10.mp4';
-// import video11 from '../assets/video/recent11.mp4';
-// import video12 from '../assets/video/recent122.mp4';
-// import video13 from '../assets/video/recent13.mp4';
-// import video14 from '../assets/video/recent144.mp4';
+import video2 from '../assets/video/recent2.mp4';
+import video3 from '../assets/video/recent3.mp4';
+import video5 from '../assets/video/recent5.mp4';
+import video6 from '../assets/video/recent6.mp4';
+import video7 from '../assets/video/recent7.mp4';
+import video8 from '../assets/video/recent8.mp4';
+import video9 from '../assets/video/recent9.mp4';
+import video10 from '../assets/video/recent10.mp4';
+import video11 from '../assets/video/recent11.mp4';
+import video12 from '../assets/video/recent122.mp4';
+import video13 from '../assets/video/recent13.mp4';
+import video14 from '../assets/video/recent144.mp4';
 import LoadingAnimation from './LoadingAnimation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
@@ -29,18 +29,18 @@ const RecentEvents = () => {
     };
 
     const videos = [
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312828/recent7_bzqkbe.mp4', title: "Event 1", date: "January 2022", tags: ["MUSIC"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312868/recent122_aijeik.mp4', title: "Event 2", date: "June 2022", tags: ["WEDDING"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312876/recent144_tr0y0l.mp4', title: "Event 3", date: "May 2023", tags: ["DANCE"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312823/recent6_gfjdgl.mp4', title: "Event 4", date: "May 2023", tags: ["WEDDING"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312787/recent2_urspde.mp4', title: "Event 5", date: "February 2023", tags: ["WEDDING"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312835/recent8_l4emud.mp4', title: "Event 6", date: "March 2023", tags: ["WEDDING"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312843/recent9_eexejm.mp4', title: "Event 7", date: "May 2023", tags: ["CEREMONY"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312848/recent10_udbxdn.mp4', title: "Event 8", date: "April 2023", tags: ["WEDDING"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312854/recent11_ccytzf.mp4', title: "Event 9", date: "July 2023", tags: ["RECEPTION"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312862/recent13_w5wzyf.mp4', title: "Event 10", date: "September 2023", tags: ["DANCE"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312807/recent3_ppczmb.mp4', title: "Event 11", date: "March 2024", tags: ["DANCE"] },
-        { src: 'http://res.cloudinary.com/drjmfligo/video/upload/v1719312815/recent5_xsby9o.mp4', title: "Event 12", date: "February 2024", tags: ["WEDDING"] },
+        { src: video7, title: "Event 1", date: "January 2022", tags: ["MUSIC"] },
+        { src: video12, title: "Event 2", date: "June 2022", tags: ["WEDDING"] },
+        { src: video14, title: "Event 3", date: "May 2023", tags: ["DANCE"] },
+        { src: video6, title: "Event 4", date: "May 2023", tags: ["WEDDING"] },
+        { src: video2, title: "Event 5", date: "February 2023", tags: ["WEDDING"] },
+        { src: video8, title: "Event 6", date: "March 2023", tags: ["WEDDING"] },
+        { src: video9, title: "Event 7", date: "May 2023", tags: ["CEREMONY"] },
+        { src: video10, title: "Event 8", date: "April 2023", tags: ["WEDDING"] },
+        { src: video11, title: "Event 9", date: "July 2023", tags: ["RECEPTION"] },
+        { src: video13, title: "Event 10", date: "September 2023", tags: ["DANCE"] },
+        { src: video3, title: "Event 11", date: "March 2024", tags: ["DANCE"] },
+        { src: video5, title: "Event 12", date: "February 2024", tags: ["WEDDING"] },
     ];
 
     const videosToDisplay = showAll ? videos : videos.slice(0, 6);
