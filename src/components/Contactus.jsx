@@ -57,7 +57,9 @@ const Contactus = () => {
       <section id="contact" className="container mx-auto pt-5 mt-lg-5">
         <h1 className="text-center py-4 text-custom-2">
           <span className="text-custom">Contact</span> us
+          <p className="text-center py-4 text-custom3">Vamsi cine special effects</p>
         </h1>
+        
         <div className="contact row row-cols-1 row-cols-lg-2 g-lg-4 d-flex align-items-center">
           <div className="col contact-image">
             <img className="img-fluid" src="https://res.cloudinary.com/drjmfligo/image/upload/v1719339220/contact_plwjcw.jpg" alt="Contact" />
