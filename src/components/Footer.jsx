@@ -23,13 +23,13 @@ const Footer = () => {
         <Row>
           <Col md="3">
             <img
-              className="img-fluid"
+              className="img-fluid pb-5"
               width="300"
               height="20"
               src="http://res.cloudinary.com/drjmfligo/image/upload/v1719341220/logo66_fylljf.png"
-              alt="cine special effects"
+              alt="vamsi cine special effects"
             />
-            {/* <h5>Vamsi Cine Special Effects</h5> */}
+            <h5>Vamsi Cine Special Effects</h5>
 
             <p>
               We provide services like cold fires, color smokes, CO2 gas, dry
