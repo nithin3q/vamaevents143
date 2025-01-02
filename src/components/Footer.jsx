@@ -1,142 +1,90 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import "../styles/Footer.css";
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-// import logo from "../assets/images/logo66.png";
+import { motion } from "framer-motion";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { NavHashLink } from "react-router-hash-link";
 
 const Footer = () => {
-  function openWhatsApp() {
-    window.open("https://wa.me/+918801474749", "_blank");
-  }
+  const socialLinks = [
+    { icon: <FaFacebookF />, url: "https://www.facebook.com/vamsi.cheliboyina", color: "#1877F2" },
+    { icon: <FaWhatsapp />, url: "https://wa.me/+918801474749", color: "#25D366" },
+    { icon: <FaInstagram />, url: "https://www.instagram.com/vamcvamc0143", color: "#E4405F" }
+  ];
 
-  function openInstagarm() {
-    window.open("https://www.instagram.com/vamcvamc0143", "_blank");
-  }
-
-  function openFacebook() {
-    window.open("https://www.facebook.com/vamsi.cheliboyina", "_blank");
-  }
   return (
-    <footer className="bg-light text-dark py-5 footer">
-      <Container className="footer-w">
-        <Row>
-          <Col md="3">
+    <motion.footer 
+      className="footer-section"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <Container>
+        <Row className="footer-content">
+          <Col lg={4} md={6} className="footer-brand">
             <img
-              className="img-fluid pb-5"
-              width="300"
-              height="20"
               src="http://res.cloudinary.com/drjmfligo/image/upload/v1719341220/logo66_fylljf.png"
-              alt="vamsi cine special effects"
+              alt="Vamsi Cine Special Effects"
+              className="footer-logo"
             />
-            <h5>Vamsi Cine Special Effects</h5>
-
-            <p>
-              We provide services like cold fires, color smokes, CO2 gas, dry
-              ice, paper blast, bubble machine, etc., for occasions and events.
+            <p className="brand-description">
+              Professional special effects services for events and occasions, including cold fires, 
+              color smokes, CO2 gas, dry ice, paper blast, and bubble machines.
             </p>
           </Col>
-          <Col md="3">
-            <h5>Company</h5>
-            <ul className="list-unstyled">
-              <li>
-                <NavHashLink smooth to="#aboutus">
-                  About Us
-                </NavHashLink>
-              </li>
-              <li>
-                <NavHashLink smooth to="#contact">
-                  Contact us
-                </NavHashLink>
-              </li>
-              <li>
-                <NavHashLink smooth to="#">
-                  Privacy Policy
-                </NavHashLink>
-              </li>
+
+          <Col lg={2} md={6} className="footer-links">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><NavHashLink smooth to="#aboutus">About Us</NavHashLink></li>
+              <li><NavHashLink smooth to="#contact">Contact Us</NavHashLink></li>
+              <li><NavHashLink smooth to="#">Services</NavHashLink></li>
             </ul>
           </Col>
 
-          <Col md="3">
-            <h5>Products</h5>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/">Cold Fires</a>
-              </li>
-              <li>
-                <a href="/">Color Smokes</a>
-              </li>
-              <li>
-                <a href="/">CO2 Gas</a>
-              </li>
-              <li>
-                <a href="/">Dry Ice</a>
-              </li>
-              <li>
-                <a href="/">Paper Blast</a>
-              </li>
-              <li>
-                <a href="/">Bubble Machine</a>
-              </li>
+          <Col lg={3} md={6} className="footer-services">
+            <h5>Our Services</h5>
+            <ul>
+              <li>Cold Fires</li>
+              <li>Color Smokes</li>
+              <li>CO2 Gas Effects</li>
+              <li>Dry Ice Effects</li>
+              <li>Paper Blast</li>
+              <li>Bubble Machines</li>
             </ul>
           </Col>
-          <Col md="3">
-            <h5>Location</h5>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/">Ponnamanda village</a>
-              </li>
-              <li>
-                <a href="/">Konaseema, Andhra Pradesh</a>
-              </li>
-              <li>
-                <a href="/">533248.</a>
-              </li>
-              <li>
-                <a href="tel:+918801474749">+91 8801474749</a>
-              </li>
-              <li>
-                <a href="mailto:vamsicinespecialeffects@gmail.com">
-                  vamsicinespecialeffects@gmail.com
-                </a>
-              </li>
-            </ul>
+
+          <Col lg={3} md={6} className="footer-contact">
+            <h5>Contact Info</h5>
+            <div className="contact-info">
+              <p><FaMapMarkerAlt /> Ponnamanda village, Konaseema, AP, 533248</p>
+              <p><FaPhone /> +91 8801474749</p>
+              <p><FaEnvelope /> vamsicinespecialeffects@gmail.com</p>
+            </div>
           </Col>
         </Row>
-        <Row className="mt-4">
-          <Col md="12" className="d-flex justify-content-center">
-            <Button
-              variant="outline-light"
-              className="mx-2"
-              onClick={openFacebook}
-            >
-              <FaFacebookF />
-            </Button>
-            <Button
-              variant="outline-light"
-              className="mx-2"
-              onClick={openWhatsApp}
-            >
-              <FaWhatsapp />
-            </Button>
-            <Button
-              variant="outline-light"
-              className="mx-2"
-              onClick={openInstagarm}
-            >
-              <FaInstagram />
-            </Button>
-          </Col>
-        </Row>
-        <Row className="mt-3">
-          <Col md="12" className="text-center">
-            <small>
-              &copy; Vamsi Cine Special Effects, 2024. All rights reserved.
-            </small>
-          </Col>
-        </Row>
+
+        <div className="footer-bottom">
+          <div className="social-links">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                style={{ "--social-color": social.color }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </div>
+          <p className="copyright">
+            © {new Date().getFullYear()} Vamsi Cine Special Effects. All rights reserved.
+          </p>
+        </div>
       </Container>
-    </footer>
+    </motion.footer>
   );
 };
 

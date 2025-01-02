@@ -44,6 +44,12 @@ const Contactus = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse.length) {
+      setFormStatus({ done: false, error: true, message: "Please verify you're not a robot" });
+      return;
+    }
+
     if (!Object.values(formData).every(Boolean)) {
       setFormStatus({ done: false, error: true, message: "Please fill all fields" });
       return;
@@ -59,6 +65,7 @@ const Contactus = () => {
       .then(
         () => {
           setFormStatus({ done: true, error: false, message: "Message sent successfully!" });
+          grecaptcha.reset();
           form.current.reset();
         },
         () => {
@@ -104,7 +111,12 @@ const Contactus = () => {
             ))}
           </div>
           
-
+          <div className="contact-image">
+            <img 
+              src="https://res.cloudinary.com/drjmfligo/image/upload/v1719339220/contact_plwjcw.jpg" 
+              alt="Contact Us"
+            />
+          </div>
         </motion.div>
 
         <motion.div 
@@ -145,6 +157,7 @@ const Contactus = () => {
                 onChange={handleChange}
               />
             </div>
+            <div className="g-recaptcha" data-sitekey="6LfVv_wpAAAAACsLoZMrLAGadJNUbvUSPjHHsBOV" />
             
             <motion.button 
               type="submit"

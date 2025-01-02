@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
-// import image1 from '../assets/images/equip1.jpg';
-// import image2 from '../assets/images/equip2.jpg';
-// import image3 from '../assets/images/equip3.jpg';
-// import image4 from '../assets/images/equip4.jpg';
-// import image5 from '../assets/images/equip22.jpg';
-// import image6 from '../assets/images/equip6.jpg';
-// import image7 from '../assets/images/equip7.jpg';
-// import image8 from '../assets/images/equip8.jpg';
-// import image9 from '../assets/images/equip9.jpg';
-import LoadingAnimation from './LoadingAnimation';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faSearch, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import '../styles/Equipment.css';
 
 const Equipment = () => {
-    const [showAllImages, setShowAllImages] = useState(false);
-    const [loadingStates, setLoadingStates] = useState(new Array(9).fill(true));
-
+    const [showAll, setShowAll] = useState(false);
+    const [selectedEquipment, setSelectedEquipment] = useState(null);
     const images = [
         { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339223/equip1_xdypsd.jpg", title: "Event 1", date: "Foam machine", tags: ["TRENDS", "DESIGN"] },
         { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339229/equip22_ntgtyo.jpg", title: "Event 2", date: "Co2 LED confetti gun", tags: ["MUSIC"] },
@@ -27,53 +18,107 @@ const Equipment = () => {
         { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339228/equip8_xaafj5.jpg", title: "Event 6", date: "Electric blower led confetti", tags: ["WEDDING"] },
         { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339229/equip9_psthvs.jpg", title: "Event 9", date: "Jumbo blower confetti", tags: ["WEDDING"] },
     ];
-
-    const imagesToDisplay = showAllImages ? images : images.slice(0, 3);
-
-    const handleImageLoad = (index) => {
-        setLoadingStates((prevLoadingStates) => {
-            const newLoadingStates = [...prevLoadingStates];
-            newLoadingStates[index] = false;
-            return newLoadingStates;
-        });
-    };
+    const imagesToDisplay = showAll ? images : images.slice(0, 3);
 
     return (
-        <div className="containerses">
-            <h1 className="text-center py-4 text-custom2"><span className="text-custom">Our </span>Equipment</h1>
-            <div className="card-columns">
-                {imagesToDisplay.map((image, index) => (
-                    <div key={index} className="card text-white border-0">
-                        <div className="position-relative">
-                            {loadingStates[index] && <LoadingAnimation />}
-                            <img
-                                className="video-card"
-                                src={image.src}
-                                alt={image.title}
-                                onLoad={() => handleImageLoad(index)}
-                                style={{ display: loadingStates[index] ? 'none' : 'block' }}
+        <motion.div 
+            className="equipment-section"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+        >
+            <motion.div 
+                className="equipment-header"
+                initial={{ y: -50 }}
+                animate={{ y: 0 }}
+            >
+                <h1><span className="gradient-text">Professional</span> Equipment</h1>
+                <p>State-of-the-art event equipment for unforgettable experiences</p>
+            </motion.div>
+
+            <div className="equipment-grid">
+                {imagesToDisplay.map((item, index) => (
+                    <motion.div
+                        key={index}
+                        className="equipment-card"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        whileHover={{ y: -10 }}
+                    >
+                        <div className="image-container">
+                            <motion.img
+                                src={item.src}
+                                alt={item.date}
+                                whileHover={{ scale: 1.05 }}
                             />
-                            <div className="card-img-overlay d-flex flex-column justify-content-between align-items-start p-5">
-                                <div className="mb-4">
-                                    {/* <div className="h3">{image.title}</div> */}
-                                </div>
-                                <div className="text-light text-light2">{image.date}</div>
+                            <motion.div 
+                                className="overlay"
+                                initial={{ opacity: 0 }}
+                                whileHover={{ opacity: 1 }}
+                            >
+                                <motion.button
+                                    className="info-button"
+                                    whileHover={{ scale: 1.1 }}
+                                    onClick={() => setSelectedEquipment(item)}
+                                >
+                                    <FontAwesomeIcon icon={faSearch} />
+                                </motion.button>
+                            </motion.div>
+                        </div>
+                        <div className="equipment-info">
+                            <h3>{item.date}</h3>
+                            <div className="specs">
+                                <FontAwesomeIcon icon={faInfoCircle} />
+                                <span>Professional Grade</span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-            {!showAllImages && (
-                <div className="text-center my-4">
-                    <button 
-                        className="btn btn-primarys" 
-                        onClick={() => setShowAllImages(true)}
+
+            {!showAll && (
+                <motion.button
+                    className="view-more-btn"
+                    onClick={() => setShowAll(true)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    View More Equipment
+                    <motion.span
+                        animate={{ y: [0, 5, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
                     >
-                        Show All <FontAwesomeIcon icon={faArrowDown} />
-                    </button>
-                </div>
+                        <FontAwesomeIcon icon={faArrowDown} />
+                    </motion.span>
+                </motion.button>
             )}
-        </div>
+
+            <AnimatePresence>
+                {selectedEquipment && (
+                    <motion.div 
+                        className="modal-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedEquipment(null)}
+                    >
+                        <motion.div 
+                            className="modal-content"
+                            initial={{ scale: 0.5 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.5 }}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <img src={selectedEquipment.src} alt={selectedEquipment.date} />
+                            <div className="modal-info">
+                                <h2>{selectedEquipment.date}</h2>
+                                <p>Professional grade equipment for your events</p>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
     );
 }
 

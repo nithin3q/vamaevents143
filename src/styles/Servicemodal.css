@@ -1,40 +1,130 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.modal-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 2rem;
+}
+
+.modal-info h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.modal-info p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.book-now-btn {
+  background: linear-gradient(45deg, #85d2bb, #9071c1);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(133, 210, 187, 0.3);
+  transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+  box-shadow: 0 6px 20px rgba(133, 210, 187, 0.4);
+}
+
+@media (max-width: 768px) {
   .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-    max-width: 500px;
-    width: 100%;
+    margin: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
   }
-  
-  .close-button {
-    position: absolute;
-    top: 0px;
-    right: 30px;
-    background: none;
-    border: none;
-    font-size: 3.5rem;
-    cursor: pointer;
-    color: #8f6e6e;
+
+  .modal-image-container {
+    height: 200px;
   }
-  
-  .modal-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+
+  .modal-info {
+    padding: 1.5rem;
   }
-  
+
+  .modal-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .book-now-btn {
+    padding: 0.8rem 2rem;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

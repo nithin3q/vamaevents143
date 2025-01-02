@@ -12,10 +12,7 @@ import RecentEvents from './components/RecentEvents';
 import Footer from './components/Footer';
 import Equipment from './components/Equipment';
 import Confetti from './components/Confetti';
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -33,9 +30,7 @@ function App() {
         <Socials/>
         <Contactus/>
         {/* <Confetti/> */}
-
         <Footer/>
-
         {/* <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services/>} />

@@ -1,99 +1,150 @@
-/* General Styles */
-.about-us-container {
-    background-color: #f9f9f9;
-    padding: 50px 20px;
-  }
-  
-  
-  
-  /* About Us Content */
-  .about-us-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-  }
-  
-  .about-us-description {
-    flex: 1;
-    max-width: 600px;
-  }
-  
-  .about-us-description h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .about-us-description p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  .about-us-image {
-    flex: 1;
-    max-width: 660px;
-  }
-  
-  .about-us-image img {
-    width: 600px;
-    border-radius: 10px;
-    height: 400px;
+.about-wrapper {
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+}
+
+.about-hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.accent-text {
+  color: #4ECDC4;
+}
+
+.highlight-text {
+  color: #FF6B6B;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.about-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.text-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2d3436;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.feature-icon {
+  color: #4ECDC4;
+  font-size: 1.2rem;
+}
+
+.image-section img {
+  width: 600px;
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.achievements-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.achievement-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+}
+
+.achievement-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.achievement-card h3 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.achievement-card p {
+  color: #666;
+}
+
+@media (max-width: 1024px) {
+  .content-section {
+      grid-template-columns: 1fr;
   }
 
-  .visitingcard {
-    --s: 10px; /* control the size */
-    padding: var(--s);
-    border: calc(2*var(--s)) solid #0000;
-    outline: 1px solid #000;
-    outline-offset: calc(-1*var(--s));
-    background: conic-gradient(from 90deg at 1px 1px,#0000 25%,#000 0);
+  .achievements-section {
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Media Queries */
-  @media (max-width: 1024px) {
-    .about-us-content {
-      gap: 20px;
-    }
-  
-    .about-us-description h2 {
-      font-size: 2em;
-    }
-  
-    .about-us-description p {
-      font-size: 1.1em;
-    }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 2.5rem;
   }
-  
-  @media (max-width: 768px) {
-    .about-us-content {
-      flex-direction: column;
-    }
-  
-    .about-us-description h2 {
-      font-size: 1.8em;
-    }
-  
-    .about-us-description p {
-      font-size: 1em;
-    }
-  
-    .about-us-image img {
-      max-width: 100%;
+
+  .features-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .image-section img {
+      width: 100%;
       height: auto;
-    }
   }
-  
-  @media (max-width: 480px) {
-    .about-us-description h2 {
-      font-size: 1.5em;
-    }
-  
-    .about-us-description p {
-      font-size: 0.9em;
-    }
+}
+
+@media (max-width: 480px) {
+  .achievements-section {
+      grid-template-columns: 1fr;
   }
-  
+}
