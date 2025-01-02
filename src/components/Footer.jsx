@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { NavHashLink } from "react-router-hash-link";
+import "../styles/Footer.css";
 
 const Footer = () => {
   const socialLinks = [

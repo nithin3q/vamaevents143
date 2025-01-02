@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faLocationDot, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import emailjs from "@emailjs/browser";
-import '../styles/Contactus.css';
+// import '../styles/Contactus.css';
 
 const Contactus = () => {
   const form = useRef();
