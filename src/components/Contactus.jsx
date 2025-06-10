@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faLocationDot, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faLocationDot, faPaperPlane, faHeart } from '@fortawesome/free-solid-svg-icons';
 import emailjs from "@emailjs/browser";
 import '../styles/Contactus.css';
 
@@ -18,21 +18,24 @@ const Contactus = () => {
   const contactInfo = [
     {
       icon: faPhone,
-      title: "Call Us",
+      title: "Ring Us",
       details: "+91 9876543210",
-      color: "#4ECDC4"
+      emoji: "📱",
+      color: "#FFD93D"
     },
     {
       icon: faEnvelope,
-      title: "Email Us",
+      title: "Drop a Line",
       details: "info@vamsicine.com",
+      emoji: "📧",
       color: "#FF6B6B"
     },
     {
       icon: faLocationDot,
-      title: "Visit Us",
+      title: "Find Us",
       details: "Hyderabad, Telangana",
-      color: "#96C93D"
+      emoji: "📍",
+      color: "#4ECDC4"
     }
   ];
 
@@ -45,7 +48,7 @@ const Contactus = () => {
     e.preventDefault();
 
     if (!Object.values(formData).every(Boolean)) {
-      setFormStatus({ done: false, error: true, message: "Please fill all fields" });
+      setFormStatus({ done: false, error: true, message: "Fill in all the deets!" });
       return;
     }
 
@@ -58,11 +61,11 @@ const Contactus = () => {
       )
       .then(
         () => {
-          setFormStatus({ done: true, error: false, message: "Message sent successfully!" });
+          setFormStatus({ done: true, error: false, message: "Message sent! We'll get back to you soon! 🚀" });
           form.current.reset();
         },
         () => {
-          setFormStatus({ done: false, error: true, message: "Failed to send message" });
+          setFormStatus({ done: false, error: true, message: "Oops! Something went wrong 😅" });
         }
       );
   };
@@ -73,14 +76,14 @@ const Contactus = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div className="contact-header">
+      <div className="contact-header" id="contact">
         <motion.h1
           initial={{ y: -20 }}
           animate={{ y: 0 }}
         >
-          Get In <span className="accent-text">Touch</span>
+          Let's Connect <span className="emoji-wave">👋</span>
         </motion.h1>
-        <p>Let's create something extraordinary together</p>
+        <p>Slide into our DMs or hit us up the old-school way!</p>
       </div>
 
       <div className="contact-container">
@@ -97,14 +100,13 @@ const Contactus = () => {
                 whileHover={{ scale: 1.05 }}
                 style={{ '--card-color': info.color }}
               >
+                <div className="card-emoji">{info.emoji}</div>
                 <FontAwesomeIcon icon={info.icon} className="info-icon" />
                 <h3>{info.title}</h3>
                 <p>{info.details}</p>
               </motion.div>
             ))}
           </div>
-          
-
         </motion.div>
 
         <motion.div 
@@ -117,7 +119,7 @@ const Contactus = () => {
               <input
                 type="text"
                 name="from_name"
-                placeholder="Your Name"
+                placeholder="Your Name *"
                 onChange={handleChange}
               />
             </div>
@@ -125,7 +127,7 @@ const Contactus = () => {
               <input
                 type="email"
                 name="reply_to"
-                placeholder="Your Email"
+                placeholder="Your Email *"
                 onChange={handleChange}
               />
             </div>
@@ -133,14 +135,14 @@ const Contactus = () => {
               <input
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder="What's this about? *"
                 onChange={handleChange}
               />
             </div>
             <div className="form-group">
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder="Your Message *"
                 rows="6"
                 onChange={handleChange}
               />
@@ -149,8 +151,8 @@ const Contactus = () => {
             <motion.button 
               type="submit"
               className="submit-button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Send Message
               <FontAwesomeIcon icon={faPaperPlane} className="send-icon" />

@@ -1,6 +1,7 @@
 .contact-section {
     padding: 6rem 2rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
 }
 
 .contact-header {
@@ -10,13 +11,16 @@
 
 .contact-header h1 {
     font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 1rem;
-}
-
-.accent-text {
-    background: linear-gradient(45deg, #4ECDC4, #556270);
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.emoji-wave {
+    display: inline-block;
+    animation: wave 2s infinite;
 }
 
 .contact-header p {
@@ -28,27 +32,34 @@
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 4rem;
 }
 
 .info-cards {
     display: grid;
     gap: 1.5rem;
-    margin-bottom: 2rem;
 }
 
 .info-card {
     background: white;
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
 }
 
 .info-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--card-color);
     margin-bottom: 1rem;
 }
@@ -61,12 +72,6 @@
 
 .info-card p {
     color: #666;
-}
-
-.contact-image img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .contact-form {
@@ -85,9 +90,10 @@
     width: 100%;
     padding: 1rem;
     border: 2px solid #e9ecef;
-    border-radius: 10px;
+    border-radius: 15px;
     font-size: 1rem;
     transition: all 0.3s ease;
+    background: #f8f9fa;
 }
 
 .form-group input:focus,
@@ -95,15 +101,16 @@
     border-color: #4ECDC4;
     outline: none;
     box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+    background: white;
 }
 
 .submit-button {
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(45deg, #4ECDC4, #556270);
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -125,18 +132,30 @@
 .error-message {
     margin-top: 1rem;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
+    font-weight: 500;
 }
 
 .success-message {
-    background: #96C93D20;
-    color: #96C93D;
+    background: #4ECDC420;
+    color: #4ECDC4;
 }
 
 .error-message {
     background: #FF6B6B20;
     color: #FF6B6B;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(20deg); }
+    75% { transform: rotate(-15deg); }
 }
 
 @media (max-width: 1024px) {
@@ -157,5 +176,9 @@
 
     .contact-form {
         padding: 2rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
     }
 }

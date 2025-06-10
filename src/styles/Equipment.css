@@ -1,35 +1,36 @@
-.equipment-section {
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+.equipment-container {
+    padding: 4rem 2rem;
+    background: #fafafa;
     min-height: 100vh;
 }
 
 .equipment-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .equipment-header h1 {
     font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: 1rem;
-    color: #2d3436;
-}
-
-.gradient-text {
-    background: linear-gradient(45deg, #6c5ce7, #a8e6cf);
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
 }
 
 .equipment-header p {
     font-size: 1.2rem;
-    color: #636e72;
+    color: #666;
+}
+
+.sparkle {
+    display: inline-block;
+    animation: sparkle 1.5s infinite;
 }
 
 .equipment-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -39,116 +40,126 @@
     background: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
 }
 
-.image-container {
+.equipment-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
     position: relative;
     padding-top: 75%;
     overflow: hidden;
 }
 
-.image-container img {
+.card-image img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.overlay {
+.equipment-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
+    top: 1rem;
+    right: 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 0.5rem;
 }
 
-.info-button {
-    background: white;
-    border: none;
-    width: 50px;
-    height: 50px;
+.like-btn, .share-btn {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    color: #666;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    color: #6c5ce7;
     font-size: 1.2rem;
+    backdrop-filter: blur(5px);
 }
 
-.equipment-info {
+.like-btn.liked {
+    background: #FF6B6B;
+    color: white;
+}
+
+.card-content {
     padding: 1.5rem;
 }
 
-.equipment-info h3 {
-    font-size: 1.3rem;
-    color: #2d3436;
+.card-content h3 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
-.specs {
+.tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: #f0f0f0;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-weight: 600;
+    color: #4ECDC4;
+    margin: 1rem 0;
+}
+
+.book-now {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.load-more {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #636e72;
-    font-size: 0.9rem;
-}
-
-.view-more-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin: 4rem auto 0;
-    padding: 1rem 2.5rem;
-    background: linear-gradient(45deg, #6c5ce7, #a8e6cf);
+    margin: 3rem auto 0;
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
     color: white;
-    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.arrow-icon {
+    animation: bounce 1s infinite;
 }
 
-.modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 20px;
-    max-width: 90%;
-    max-height: 90vh;
-    overflow: auto;
+@keyframes sparkle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
-.modal-content img {
-    width: 100%;
-    max-height: 70vh;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-.modal-info {
-    margin-top: 1.5rem;
-    text-align: center;
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
 }
 
 @media (max-width: 768px) {
@@ -158,5 +169,10 @@
     
     .equipment-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .equipment-card {
+        max-width: 400px;
+        margin: 0 auto;
     }
 }

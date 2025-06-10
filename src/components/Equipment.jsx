@@ -1,76 +1,141 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faSearch, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faHeart, faShare } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Equipment.css';
 
 const Equipment = () => {
     const [showAll, setShowAll] = useState(false);
     const [selectedEquipment, setSelectedEquipment] = useState(null);
-    const images = [
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339223/equip1_xdypsd.jpg", title: "Event 1", date: "Foam machine", tags: ["TRENDS", "DESIGN"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339229/equip22_ntgtyo.jpg", title: "Event 2", date: "Co2 LED confetti gun", tags: ["MUSIC"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339227/equip6_eg2vmx.jpg", title: "Event 3", date: "Dry smoke machine", tags: ["BIRTHDAY"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339223/equip2_uizibo.jpg", title: "Event 5", date: "Co2 confetti gun", tags: ["WEDDING"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339224/equip3_lzt4va.jpg", title: "Event 4", date: "Snow fall machine", tags: ["MUSIC"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339225/equip4_iyet7k.jpg", title: "Event 1", date: "Co2 jet machine", tags: ["MUSIC"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339227/equip7_wm19mv.jpg", title: "Event 4", date: "Dry ice fog matka", tags: ["WEDDING"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339228/equip8_xaafj5.jpg", title: "Event 6", date: "Electric blower led confetti", tags: ["WEDDING"] },
-        { src: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339229/equip9_psthvs.jpg", title: "Event 9", date: "Jumbo blower confetti", tags: ["WEDDING"] },
+    const [likes, setLikes] = useState({});
+
+    const equipment = [
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339223/equip1_xdypsd.jpg",
+            name: "Foam Machine",
+            tag: "#FoamParty",
+            description: "Turn up the vibes with epic foam effects! 🌊",
+            price: "Starting from ₹999/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339229/equip22_ntgtyo.jpg",
+            name: "LED Confetti Gun",
+            tag: "#PartyPop",
+            description: "Light up the night with glowing confetti! ✨",
+            price: "Starting from ₹799/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339227/equip6_eg2vmx.jpg",
+            name: "Smoke Machine",
+            tag: "#SmokeVibes",
+            description: "Create that dreamy aesthetic for your pics 💨",
+            price: "Starting from ₹699/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339223/equip2_uizibo.jpg",
+            name: "CO2 Gun",
+            tag: "#CoolVibes",
+            description: "Instant cool factor for your event! ❄️",
+            price: "Starting from ₹899/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339224/equip3_lzt4va.jpg",
+            name: "Snow Machine",
+            tag: "#WinterMagic",
+            description: "Make it snow anywhere, anytime! ⛄",
+            price: "Starting from ₹1299/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339225/equip4_iyet7k.jpg",
+            name: "CO2 Jet",
+            tag: "#CoolBlast",
+            description: "Festival vibes on demand! 🎪",
+            price: "Starting from ₹1499/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339227/equip7_wm19mv.jpg",
+            name: "Fog Matka",
+            tag: "#DesiCool",
+            description: "Traditional meets trendy! 🪔",
+            price: "Starting from ₹599/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339228/equip8_xaafj5.jpg",
+            name: "LED Blower",
+            tag: "#GlowUp",
+            description: "Glow different with LED effects! 💫",
+            price: "Starting from ₹899/hr"
+        },
+        {
+            img: "https://res.cloudinary.com/drjmfligo/image/upload/v1719339229/equip9_psthvs.jpg",
+            name: "Jumbo Blower",
+            tag: "#BigVibes",
+            description: "Go big or go home! 🌪️",
+            price: "Starting from ₹1199/hr"
+        }
     ];
-    const imagesToDisplay = showAll ? images : images.slice(0, 3);
+
+    const toggleLike = (index) => {
+        setLikes(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
+
+    const equipmentToShow = showAll ? equipment : equipment.slice(0, 6);
 
     return (
-        <motion.div 
-            className="equipment-section"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-        >
+        <div className="equipment-container" id="equipment">
             <motion.div 
                 className="equipment-header"
-                initial={{ y: -50 }}
-                animate={{ y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
             >
-                <h1><span className="gradient-text">Professional</span> Equipment</h1>
-                <p>State-of-the-art event equipment for unforgettable experiences</p>
+                <h1>Our Equipment <span className="sparkle">✨</span></h1>
+                <p>Swipe through our trending party gear</p>
             </motion.div>
 
             <div className="equipment-grid">
-                {imagesToDisplay.map((item, index) => (
+                {equipmentToShow.map((item, index) => (
                     <motion.div
                         key={index}
                         className="equipment-card"
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        whileHover={{ y: -10 }}
                     >
-                        <div className="image-container">
-                            <motion.img
-                                src={item.src}
-                                alt={item.date}
-                                whileHover={{ scale: 1.05 }}
-                            />
-                            <motion.div 
-                                className="overlay"
-                                initial={{ opacity: 0 }}
-                                whileHover={{ opacity: 1 }}
-                            >
+                        <div className="card-image">
+                            <img src={item.img} alt={item.name} />
+                            <div className="card-overlay">
                                 <motion.button
-                                    className="info-button"
-                                    whileHover={{ scale: 1.1 }}
-                                    onClick={() => setSelectedEquipment(item)}
+                                    className={`like-btn ${likes[index] ? 'liked' : ''}`}
+                                    onClick={() => toggleLike(index)}
+                                    whileTap={{ scale: 1.2 }}
                                 >
-                                    <FontAwesomeIcon icon={faSearch} />
+                                    <FontAwesomeIcon icon={faHeart} />
                                 </motion.button>
-                            </motion.div>
-                        </div>
-                        <div className="equipment-info">
-                            <h3>{item.date}</h3>
-                            <div className="specs">
-                                <FontAwesomeIcon icon={faInfoCircle} />
-                                <span>Professional Grade</span>
+                                <motion.button
+                                    className="share-btn"
+                                    whileTap={{ scale: 1.2 }}
+                                >
+                                    <FontAwesomeIcon icon={faShare} />
+                                </motion.button>
                             </div>
+                        </div>
+                        <div className="card-content">
+                            <h3>{item.name}</h3>
+                            <span className="tag">{item.tag}</span>
+                            <p>{item.description}</p>
+                            <div className="price">{item.price}</div>
+                            <motion.button 
+                                className="book-now"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                Book Now
+                            </motion.button>
                         </div>
                     </motion.div>
                 ))}
@@ -78,47 +143,16 @@ const Equipment = () => {
 
             {!showAll && (
                 <motion.button
-                    className="view-more-btn"
+                    className="load-more"
                     onClick={() => setShowAll(true)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    View More Equipment
-                    <motion.span
-                        animate={{ y: [0, 5, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.5 }}
-                    >
-                        <FontAwesomeIcon icon={faArrowDown} />
-                    </motion.span>
+                    See More Equipment
+                    <FontAwesomeIcon icon={faArrowDown} className="arrow-icon" />
                 </motion.button>
             )}
-
-            <AnimatePresence>
-                {selectedEquipment && (
-                    <motion.div 
-                        className="modal-overlay"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setSelectedEquipment(null)}
-                    >
-                        <motion.div 
-                            className="modal-content"
-                            initial={{ scale: 0.5 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.5 }}
-                            onClick={e => e.stopPropagation()}
-                        >
-                            <img src={selectedEquipment.src} alt={selectedEquipment.date} />
-                            <div className="modal-info">
-                                <h2>{selectedEquipment.date}</h2>
-                                <p>Professional grade equipment for your events</p>
-                            </div>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.div>
+        </div>
     );
 }
 
