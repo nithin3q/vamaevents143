@@ -72,3 +72,12 @@
     }
 }
 
+.instagram-icon {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}

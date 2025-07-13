@@ -10,6 +10,10 @@ const Socials = () => {
         window.open('https://www.facebook.com/vamsi.cheliboyina', '_blank');
     }
 
+    function openInstagram() {
+        window.open('https://www.instagram.com/vamsi.events', '_blank');
+    }
+
     return (
         <div className="socials-container">
             <div className="icon fb-icon" onClick={openFacebook}>
@@ -18,6 +22,9 @@ const Socials = () => {
             <div className="icon whatsapp-icon" onClick={openWhatsApp}>
                 <i className="fab fa-whatsapp"></i>
                 <span className="whatsapp-number">8801474749</span>
+            </div>
+            <div className="icon instagram-icon" onClick={openInstagram}>
+                <i className="fab fa-instagram"></i>
             </div>
         </div>
     );
