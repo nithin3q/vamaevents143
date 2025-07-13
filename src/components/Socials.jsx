@@ -1,31 +1,36 @@
 import React from 'react';
 import '../styles/Socials.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Socials = () => {
-    function openWhatsApp() {
+    const handleWhatsApp = (e) => {
+        e.preventDefault();
         window.open('https://wa.me/+918801474749', '_blank');
     }
 
-    function openFacebook() {
+    const handleFacebook = (e) => {
+        e.preventDefault();
         window.open('https://www.facebook.com/vamsi.cheliboyina', '_blank');
     }
 
-    function openInstagram() {
+    const handleInstagram = (e) => {
+        e.preventDefault();
         window.open('https://www.instagram.com/vamsi.events', '_blank');
     }
 
     return (
         <div className="socials-container">
-            <div className="icon fb-icon" onClick={openFacebook}>
-                <i className="fab fa-facebook-f"></i>
-            </div>
-            <div className="icon whatsapp-icon" onClick={openWhatsApp}>
-                <i className="fab fa-whatsapp"></i>
+            <a href="#" onClick={handleFacebook} className="icon fb-icon">
+                <FontAwesomeIcon icon={faFacebookF} />
+            </a>
+            <a href="#" onClick={handleWhatsApp} className="icon whatsapp-icon">
+                <FontAwesomeIcon icon={faWhatsapp} />
                 <span className="whatsapp-number">8801474749</span>
-            </div>
-            <div className="icon instagram-icon" onClick={openInstagram}>
-                <i className="fab fa-instagram"></i>
-            </div>
+            </a>
+            <a href="#" onClick={handleInstagram} className="icon instagram-icon">
+                <FontAwesomeIcon icon={faInstagram} />
+            </a>
         </div>
     );
 }
