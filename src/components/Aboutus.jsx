@@ -33,8 +33,12 @@ const AboutUs = () => {
             initial={{ y: -50 }}
             animate={{ y: 0 }}
           >
-            <span className="gradient-text">Transforming</span> Events Into 
-            <span className="gradient-text"> Extraordinary</span> Experiences
+            <span className="gradient-text">Transforming</span> Events Into
+            <motion.span
+              className="word-pill pill-teal-orchid"
+              onViewportEnter={(entry) => entry?.target?.classList.add('is-visible')}
+              viewport={{ once: true }}
+            > Extraordinary Experiences</motion.span>
           </motion.h1>
           <p className="hero-subtitle">Since 2019</p>
           

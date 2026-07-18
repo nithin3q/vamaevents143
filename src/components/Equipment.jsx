@@ -92,7 +92,11 @@ const Equipment = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
             >
-                <h1>Our Equipment <span className="sparkle">✨</span></h1>
+                <h1><motion.span
+                    className="word-pill pill-orange-yellow"
+                    onViewportEnter={(entry) => entry?.target?.classList.add('is-visible')}
+                    viewport={{ once: true }}
+                >Our Equipment</motion.span> <span className="sparkle">✨</span></h1>
                 <p>Swipe through our trending party gear</p>
             </motion.div>
 

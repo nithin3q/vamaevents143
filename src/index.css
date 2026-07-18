@@ -1,0 +1,66 @@
+/* ============================================================
+   Global Title Word Highlights
+   Background colour wipes LEFT → RIGHT on scroll.
+   Uses background-size animation — works on display:inline,
+   so the highlighted words stay on the same line as the rest.
+   ============================================================ */
+
+/* Kept for "Transforming" in AboutUs */
+.gradient-text {
+  background: linear-gradient(135deg, #b365ef 0%, #4388c4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+/* ── Base pill ── */
+.word-pill {
+  display: inline;
+  padding: 3px 12px 5px;
+  border-radius: 10px;
+  white-space: nowrap;
+
+  /* Start with 0-width background (invisible), reveal left→right */
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  transition: background-size 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Triggered by onViewportEnter — slides background in fully */
+.word-pill.is-visible {
+  background-size: 100% 100%;
+}
+
+/* ── Per-section colours ── */
+
+/* 1. Services "Our Vibe"  — Pink ➜ Peach */
+.pill-pink-peach {
+  background-image: linear-gradient(to right, #FFB7C5 0%, #FFD4A8 100%);
+}
+
+/* 2. About "Magical Moments"  — Mint ➜ Lime */
+.pill-mint-lime {
+  background-image: linear-gradient(to right, #A8F0C8 0%, #D4F0A0 100%);
+}
+
+/* 3. Recent Events "Recent Events"  — Sky ➜ Lavender */
+.pill-sky-lavender {
+  background-image: linear-gradient(to right, #A8D8FF 0%, #D4B8FF 100%);
+}
+
+/* 4. Contact "Let's Connect"  — Lemon ➜ Coral */
+.pill-lemon-coral {
+  background-image: linear-gradient(to right, #FFF4A3 0%, #FFB8A0 100%);
+}
+
+/* 5. About Us "Extraordinary Experiences"  — Teal ➜ Orchid */
+.pill-teal-orchid {
+  background-image: linear-gradient(to right, #A0F0E0 0%, #E0AAFF 100%);
+}
+
+/* 6. Equipment "Our Equipment"  — Orange ➜ Yellow */
+.pill-orange-yellow {
+  background-image: linear-gradient(to right, #FFB347 0%, #FFF176 100%);
+}

@@ -81,7 +81,11 @@ const Contactus = () => {
           initial={{ y: -20 }}
           animate={{ y: 0 }}
         >
-          Let's Connect <span className="emoji-wave">👋</span>
+          <motion.span
+            className="word-pill pill-lemon-coral"
+            onViewportEnter={(entry) => entry?.target?.classList.add('is-visible')}
+            viewport={{ once: true }}
+          >Let's Connect</motion.span> <span className="emoji-wave">👋</span>
         </motion.h1>
         <p>Slide into our DMs or hit us up the old-school way!</p>
       </div>

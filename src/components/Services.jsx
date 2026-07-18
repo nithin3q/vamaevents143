@@ -82,7 +82,11 @@ const Services = () => {
           className="services-header"
         >
           <h1 className="services-title">
-            Our Vibe <span className="emoji-wave">✨</span>
+            <motion.span
+              className="word-pill pill-pink-peach"
+              onViewportEnter={(entry) => entry?.target?.classList.add('is-visible')}
+              viewport={{ once: true }}
+            >Our Vibe</motion.span> <span className="emoji-wave">✨</span>
           </h1>
           <p className="services-subtitle">
             Level up your events with these cool effects

@@ -284,6 +284,45 @@ span.badge.badge-light {
     transform: translateY(3px);
 }
 
+/* View All Events button — centered, premium styled */
+.view-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 3rem auto 0;
+    padding: 0.85rem 2.5rem;
+    background: linear-gradient(135deg, #b365ef 0%, #4388c4 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(179, 101, 239, 0.35);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.view-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(179, 101, 239, 0.5);
+    background: linear-gradient(135deg, #4388c4 0%, #b365ef 100%);
+}
+
+.view-more-btn:active {
+    transform: translateY(0);
+}
+
+.view-more-btn .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.view-more-btn:hover .arrow-icon {
+    transform: translateY(4px);
+}
+
 @media (max-width: 768px) {
     .events-container {
         padding: 2rem 1rem;

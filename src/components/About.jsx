@@ -59,7 +59,11 @@ const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   return (
     <div id="about1" className="container container-about">
       <h1 className="text-center py-4 text-custom2 bg-white">
-        <span className="gradient-text ">Creating Magical Moments</span> 
+        Creating <motion.span
+          className="word-pill pill-mint-lime"
+          onViewportEnter={(entry) => entry?.target?.classList.add('is-visible')}
+          viewport={{ once: true }}
+        >Magical Moments</motion.span>
       </h1>
 
       <div className="about-container">

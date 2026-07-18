@@ -8,6 +8,21 @@
   background-position: -25px -25px;
 }
 
+/* Match the title font to other section titles */
+.container-about > h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #2d3436;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+@media (max-width: 768px) {
+  .container-about > h1 {
+    font-size: 2.2rem;
+  }
+}
+
 .about-container {
   display: flex;
   align-items: center;

@@ -4,17 +4,28 @@
     --icon-color: #b365ef;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --transition-speed: 0.3s;
+    --contact-color: #b365ef;
   }
   
   .navbar {
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.95) !important;
     padding: 0.8rem 0;
-    transition: all var(--transition-speed) ease;
+    width: 100%;
+    left: 0;
+    border-radius: 0;
+    transition:
+      padding 0.4s ease,
+      width 0.4s ease,
+      left 0.4s ease,
+      border-radius 0.4s ease,
+      box-shadow 0.4s ease,
+      top 0.4s ease,
+      background-color 0.4s ease;
   }
   
   .navbar-brand img {
-    transition: transform var(--transition-speed) ease;
+    transition: width 0.35s ease, transform 0.35s ease;
   }
   
   .navbar-brand:hover img {
@@ -69,7 +80,80 @@
   .navbar-toggler:hover {
     transform: scale(1.1);
   }
+
+  /* Centered Nav Links */
+  .navbar-center {
+    justify-content: center;
+  }
+
+  /* Active Link Styles */
+  .nav-link.active {
+    background-color: rgba(67, 136, 196, 0.1);
+    font-weight: 600;
+  }
   
+  /* ── Floating island navbar on scroll ── */
+  .navbar.scrolled {
+    width: 82%;
+    left: 9%;
+    top: 10px;
+    padding: 0.3rem 0;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+    background-color: rgba(255, 255, 255, 0.97) !important;
+  }
+
+  /* Shrink logo when scrolled */
+  .navbar.scrolled .logo-image {
+    width: 155px !important;
+  }
+
+  /* Compress nav links vertically when scrolled */
+  .navbar.scrolled .nav-link {
+    padding: 0.3rem 0.85rem;
+    font-size: 0.91rem;
+  }
+
+  /* Keep contact pill proportional when scrolled */
+  .navbar.scrolled .nav-link-contact {
+    padding: 0.28rem 0.95rem !important;
+    font-size: 0.88rem;
+  }
+
+  /* Right-side Contact Us — styled as a pill button */
+  .navbar-right {
+    margin-left: auto;
+  }
+
+  .nav-link-contact {
+    background: linear-gradient(135deg, #b365ef 0%, #4388c4 100%) !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    padding: 0.5rem 1.3rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 14px rgba(179, 101, 239, 0.35);
+    transition: all var(--transition-speed) ease !important;
+    white-space: nowrap;
+  }
+
+  .nav-link-contact .nav-icons {
+    color: #fff !important;
+  }
+
+  .nav-link-contact:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(179, 101, 239, 0.55) !important;
+    background: linear-gradient(135deg, #4388c4 0%, #b365ef 100%) !important;
+    color: #fff !important;
+    background-color: transparent !important;
+  }
+
+  .nav-link-contact.active {
+    background: linear-gradient(135deg, #4388c4 0%, #b365ef 100%) !important;
+    color: #fff !important;
+    background-color: transparent !important;
+  }
+
   /* Mobile Responsive Styles */
   @media (max-width: 991px) {
     .navbar-collapse {
@@ -82,17 +166,27 @@
     .nav-link {
       margin: 0.3rem 0;
     }
+
+    .navbar-center {
+      justify-content: center;
+    }
+
+    .navbar-right {
+      margin-left: 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 0.5rem;
+    }
+
+    .nav-link-contact {
+      display: inline-flex;
+      width: fit-content;
+    }
+
+    /* Disable island/pill effect on mobile — stay full width */
+    .navbar.scrolled {
+      width: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+      border-radius: 0 !important;
+    }
   }
-  
-  /* Active Link Styles */
-  .nav-link.active {
-    background-color: rgba(67, 136, 196, 0.1);
-    font-weight: 600;
-  }
-  
-  /* Scroll Animation */
-  .navbar.scrolled {
-    padding: 0.5rem 0;
-    box-shadow: 0 2px 15px var(--shadow-color);
-  }
-  

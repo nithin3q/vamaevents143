@@ -99,7 +99,11 @@ const RecentEvents = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <span className="gradient-text">Our  Recent Events</span>
+        Our <motion.span
+          className="word-pill pill-sky-lavender"
+          onViewportEnter={(entry) => entry?.target?.classList.add('is-visible')}
+          viewport={{ once: true }}
+        >Recent Events</motion.span>
       </motion.h1>
 
       <div className="events-grid">

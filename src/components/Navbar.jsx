@@ -31,12 +31,12 @@ function NavBar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-lg-auto">
+          {/* Centered Nav Links — Home, Services, About Us */}
+          <ul className="navbar-nav mx-auto navbar-center">
             {[
               { to: 'home', icon: faHome, text: 'Home' },
               { to: 'services', icon: faWandMagicSparkles, text: 'Services' },
               { to: 'aboutus', icon: faInfoCircle, text: 'About Us' },
-              { to: 'contact', icon: faEnvelope, text: 'Contact Us' }
             ].map(({ to, icon, text }) => (
               <li className="nav-item" key={to}>
                 <NavHashLink 
@@ -50,6 +50,21 @@ function NavBar() {
                 </NavHashLink>
               </li>
             ))}
+          </ul>
+
+          {/* Right Side — Contact Us */}
+          <ul className="navbar-nav navbar-right">
+            <li className="nav-item">
+              <NavHashLink
+                className={`nav-link nav-link-contact ${activeLink === 'contact' ? 'active' : ''}`}
+                smooth
+                to="#contact"
+                onClick={() => setActiveLink('contact')}
+              >
+                <FontAwesomeIcon icon={faEnvelope} className='nav-icons me-2' />
+                Contact Us
+              </NavHashLink>
+            </li>
           </ul>
         </div>
       </div>
