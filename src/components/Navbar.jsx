@@ -3,7 +3,7 @@ import '../styles/NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faEnvelope, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { NavHashLink } from "react-router-hash-link";
-import logo from '../assets/images/logo-nav.png';
+import logo from '../assets/images/image.png';
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,9 +39,9 @@ function NavBar() {
               { to: 'aboutus', icon: faInfoCircle, text: 'About Us' },
             ].map(({ to, icon, text }) => (
               <li className="nav-item" key={to}>
-                <NavHashLink 
+                <NavHashLink
                   className={`nav-link ${activeLink === to ? 'active' : ''}`}
-                  smooth 
+                  smooth
                   to={`#${to}`}
                   onClick={() => setActiveLink(to)}
                 >

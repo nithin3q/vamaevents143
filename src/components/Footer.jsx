@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { NavHashLink } from "react-router-hash-link";
 import "../styles/Footer.css";
-
+import logo from '../assets/images/image.png';
 const Footer = () => {
   const socialLinks = [
     { icon: <FaFacebookF />, url: "https://www.facebook.com/vamsi.cheliboyina", color: "#1877F2" },
@@ -13,7 +13,7 @@ const Footer = () => {
   ];
 
   return (
-    <motion.footer 
+    <motion.footer
       className="footer-section"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -22,12 +22,12 @@ const Footer = () => {
         <Row className="footer-content">
           <Col lg={4} md={6} className="footer-brand">
             <img
-              src="http://res.cloudinary.com/drjmfligo/image/upload/v1719341220/logo66_fylljf.png"
-              alt="Vamsi Cine Special Effects"
+              src={logo}
+              alt="Vamsi Events"
               className="footer-logo"
             />
             <p className="brand-description">
-              Professional special effects services for events and occasions, including cold fires, 
+              Professional special effects services for events and occasions, including cold fires,
               color smokes, CO2 gas, dry ice, paper blast, and bubble machines.
             </p>
           </Col>
@@ -81,7 +81,7 @@ const Footer = () => {
             ))}
           </div>
           <p className="copyright">
-            © {new Date().getFullYear()} Vamsi Cine Special Effects. All rights reserved.
+            © {new Date().getFullYear()} Vamsi Events. All rights reserved.
           </p>
         </div>
       </Container>
